@@ -1,13 +1,15 @@
 <?php
 // api/db.php
 
-$host = 'localhost';
-$dbname = 'teacher_attendance';
-$username = 'root';
-$password = '';
+$host = getenv('DB_HOST') ?: 'localhost';
+$dbname = getenv('DB_NAME') ?: 'teacher_attendance';
+$username = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : '';
+$port = getenv('DB_PORT') ?: '3306';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+    $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {

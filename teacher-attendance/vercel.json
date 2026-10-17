@@ -1,0 +1,25 @@
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    },
+    "*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    { "src": "/admin/login", "dest": "/index.php" },
+    { "src": "/admin/dashboard", "dest": "/dashboard.php" },
+    { "src": "/admin", "dest": "/dashboard.php" },
+    { "src": "/teacher/login", "dest": "/teacher_login.php" },
+    { "src": "/teacher/signup", "dest": "/teacher_signup.php" },
+    { "src": "/teacher/dashboard", "dest": "/teacher_dashboard.php" },
+    { "src": "/teacher/attendance", "dest": "/teacher_attendance.php" },
+    { "src": "/teacher", "dest": "/teacher_dashboard.php" },
+    { "src": "/css/(.*)", "dest": "/css/$1" },
+    { "src": "/js/(.*)", "dest": "/js/$1" },
+    { "src": "/models/(.*)", "dest": "/models/$1" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
