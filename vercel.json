@@ -1,12 +1,13 @@
 {
-  "functions": {
-    "teacher-attendance/api/**/*.php": {
-      "runtime": "vercel-php@0.7.3"
-    },
-    "teacher-attendance/*.php": {
-      "runtime": "vercel-php@0.7.3"
-    }
-  },
+  "version": 2,
+  "builds": [
+    { "src": "teacher-attendance/*.php", "use": "vercel-php@0.7.3" },
+    { "src": "teacher-attendance/api/*.php", "use": "vercel-php@0.7.3" },
+    { "src": "teacher-attendance/css/**", "use": "@vercel/static" },
+    { "src": "teacher-attendance/js/**", "use": "@vercel/static" },
+    { "src": "teacher-attendance/models/**", "use": "@vercel/static" },
+    { "src": "teacher-attendance/assets/**", "use": "@vercel/static" }
+  ],
   "routes": [
     { "src": "/admin/login", "dest": "/teacher-attendance/index.php" },
     { "src": "/admin/dashboard", "dest": "/teacher-attendance/dashboard.php" },

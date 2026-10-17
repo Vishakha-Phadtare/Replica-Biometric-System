@@ -1,0 +1,7 @@
+{
+  "name": "replica-biometric-system-root",
+  "version": "1.0.0",
+  "dependencies": {
+    "vercel-php": "^0.7.3"
+  }
+}
