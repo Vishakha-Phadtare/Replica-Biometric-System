@@ -1,0 +1,25 @@
+{
+  "functions": {
+    "teacher-attendance/api/**/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    },
+    "teacher-attendance/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    { "src": "/admin/login", "dest": "/teacher-attendance/index.php" },
+    { "src": "/admin/dashboard", "dest": "/teacher-attendance/dashboard.php" },
+    { "src": "/admin", "dest": "/teacher-attendance/dashboard.php" },
+    { "src": "/teacher/login", "dest": "/teacher-attendance/teacher_login.php" },
+    { "src": "/teacher/signup", "dest": "/teacher-attendance/teacher_signup.php" },
+    { "src": "/teacher/dashboard", "dest": "/teacher-attendance/teacher_dashboard.php" },
+    { "src": "/teacher/attendance", "dest": "/teacher-attendance/teacher_attendance.php" },
+    { "src": "/teacher", "dest": "/teacher-attendance/teacher_dashboard.php" },
+    { "src": "/css/(.*)", "dest": "/teacher-attendance/css/$1" },
+    { "src": "/js/(.*)", "dest": "/teacher-attendance/js/$1" },
+    { "src": "/models/(.*)", "dest": "/teacher-attendance/models/$1" },
+    { "src": "/assets/(.*)", "dest": "/teacher-attendance/assets/$1" },
+    { "src": "/(.*)", "dest": "/teacher-attendance/$1" }
+  ]
+}
